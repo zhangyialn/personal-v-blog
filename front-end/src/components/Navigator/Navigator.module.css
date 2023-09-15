@@ -1,0 +1,20 @@
+.navigator {
+    width: inherit;
+    height: 65px;
+    background-color: transparent;
+}
+
+h1,p {
+    line-height: 65px;
+    color: white;
+    cursor: pointer;
+}
+
+h1 {
+    float: left;
+}
+
+p {
+    float: right;
+}
+
