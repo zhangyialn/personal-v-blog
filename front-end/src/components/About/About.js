@@ -1,9 +1,10 @@
 import React from 'react';
-
+import Navigator from "../Navigator/Navigator";
+import classes from "./About.module.css";
 const About = () => {
     return (
-        <div>
-           <h1>这里是about</h1>
+        <div className={classes.background}>
+           <Navigator />
         </div>
     );
 };

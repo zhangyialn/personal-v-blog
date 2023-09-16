@@ -3,6 +3,7 @@ import {Route} from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import './App.css'
+import './assets/fonts/iconfont.css'
 
 const App = () => {
   return (

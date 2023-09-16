@@ -1,5 +1,6 @@
 .background {
-    width: inherit;
-    height: 500px;
-    background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309151743599.png");
+    width: 100%;
+    height: 691px;
+    background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309151844102.jpg");
+    background-size: 100% 100%;
 }
