@@ -2,5 +2,80 @@
     width: 100%;
     height: 691px;
     background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309151844102.jpg");
-    background-size: 100% 100%;
+    background-size: 100% 691px;
+    position: relative;
 }
+
+.container {
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 35%;
+}
+
+.typing {
+    width: 0;
+    color: white;
+    font-size: 50px;
+    font-family: Georgia;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .07em solid aqua;
+    text-align: center;
+    animation: typing 1.5s steps(20,end) forwards,
+                blink .9s infinite;;
+}
+
+@keyframes typing {
+    from {width: 0}
+    to {width: 100%}
+}
+
+@keyframes blink {
+    from { border-color: transparent }
+    to { border-color: aqua; }
+}
+
+.down {
+    cursor: pointer;
+}
+
+
+.background i {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    font-size: 30px;
+    color: aqua;
+    animation: down-animation 1.5s infinite;
+}
+
+@keyframes down-animation {
+    0% {color: white}
+    50% {color: aqua}
+    100% {color: white}
+    0% {top: 80%}
+    50% {top: 85%}
+    100% {top: 80%}
+}
+
+.content {
+    width: 100%;
+    height: 691px;
+    background-color: #ededed;
+    position: relative;
+}
+
+.article {
+    width: 960px;
+    height: 100%;
+    background-color: white;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
+
+}
+
+
+
+
