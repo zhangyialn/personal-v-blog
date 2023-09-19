@@ -1,33 +1,38 @@
 .navigator {
     width: 100%;
-    height: 65px;
+    height: 5vw;
     background-color: #62a4da;
-    box-shadow: 0 3px 1px rgba(0,0,0,.1);
+    box-shadow: 0 .5vw 1.5vw rgba(0,0,0,.2);
     position: fixed;
     z-index: 1;
 }
 
-
 h3,p {
-    line-height: 65px;
+    line-height: 5vw;
     color: white;
     cursor: pointer;
 }
 
 .right {
-    padding-right: 75px;
+    padding-right: 7vw;
 }
 
 .rightInner {
     width: 60px;
     height: 40px;
-    padding-right: 15px;
+    padding-right: 1.5vw;
     float: right;
 }
 
+
+
+.rightInner:hover {
+    color: aqua;
+}
+
 h3 {
-    font-size: 22px;
-    padding-left: 75px;
+    font-size: 20px;
+    padding-left: 7vw;
     float: left;
 }
 
@@ -36,21 +41,12 @@ p {
     display: inline-block;
 }
 
-
-p:hover {
-    color: aqua;
-}
-
 i {
     color: white;
 }
 
-i:hover {
-    color: aqua;
-}
-
 .search {
-    line-height: 65px;
+    line-height: 5vw;
     float: right;
 }
 
@@ -58,4 +54,55 @@ a {
     text-decoration: none;
 }
 
+.menu i {
+    font-size: 3vw;
+    line-height: 6vw;
+    float: right;
+}
+
+.delete {
+    display: none;
+}
+
+.delete i {
+    font-size: 3vw;
+    line-height: 6vw;
+    float: right;
+}
+
+
+@media screen and (max-width: 771px){
+    .navigator {
+        height: 6vw;
+    }
+
+    .rightInner {
+        display: none;
+    }
+
+    .search {
+        display: none;
+    }
+
+    h3 {
+        font-size: 2.2vw;
+        line-height: 6vw;
+        padding-left: 6vw;
+    }
+
+    .right {
+        padding-right: 6vw;
+    }
+
+}
+
+@media screen and (min-width: 771px) {
+    .menu {
+        display: none;
+    }
+
+    .delete {
+        display: none;
+    }
+}
 

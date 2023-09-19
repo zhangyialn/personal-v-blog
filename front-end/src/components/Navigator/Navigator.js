@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import classes from './Navigator.module.css'
 import {Link, NavLink} from "react-router-dom";
 const Navigator = () => {
+
     return (
         <div>
             <div className={classes.navigator}>
                 <h3>暮岁首阳</h3>
                 <div className={classes.right}>
+                    <div className={classes.menu}>
+                        <i className="iconfont icon-menu2"></i>
+                    </div>
+                    <div className={classes.delete} >
+                        <i className="iconfont icon-off-search" ></i>
+                    </div>
                     <div className={classes.search}>
                         <i className="iconfont icon-nav-search"></i>
                     </div>

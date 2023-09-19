@@ -1,5 +1,5 @@
 .background {
-    width: 100%;
+    width: 100vw;
     height: 691px;
     background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309151844102.jpg");
     background-size: 100% 691px;
@@ -8,4 +8,8 @@
 
 ::-webkit-scrollbar {
     width: 5px;
+}
+
+@media screen and (max-width: 771px){
+
 }
