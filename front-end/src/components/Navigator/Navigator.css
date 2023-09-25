@@ -1,7 +1,7 @@
 .navigator {
     width: 100%;
     height: 5vw;
-    background-color: #62a4da;
+    background-color: #075e97;
     box-shadow: 0 .5vw 1.5vw rgba(0,0,0,.2);
     position: fixed;
     z-index: 1;
@@ -10,7 +10,7 @@
 .newBar {
     width: 100%;
     height: 5vw;
-    background-color: #62a4da;
+    background-color: #075e97;
     box-shadow: 0 .5vw 1.5vw rgba(0,0,0,.2);
     position: fixed;
     z-index: 1;
@@ -65,7 +65,7 @@ a {
 
 .menu i {
     font-size: 3vw;
-    line-height: 6vw;
+    line-height: 8vw;
     float: right;
 }
 
@@ -79,19 +79,26 @@ a {
     float: right;
 }
 
+@media screen and (max-width: 426px){
+
+}
 
 @media screen and (max-width: 771px){
     .navigator {
-        height: 6vw;
+        height: 8vw;
     }
 
     .newBar {
         width: 100%;
-        height: 15vw;
-        background-color: #62a4da;
+        height: 42vw;
+        background-color: #075e97;
         box-shadow: 0 .5vw 1.5vw rgba(0,0,0,.2);
         position: fixed;
         z-index: 1;
+    }
+
+    .bar {
+
     }
 
     .rightInner {
@@ -103,9 +110,13 @@ a {
     }
 
     h3 {
-        font-size: 2.2vw;
-        line-height: 6vw;
+        font-size: 2.4vw;
+        line-height: 8vw;
         padding-left: 6vw;
+    }
+
+    .menu i {
+        font-size: 4vw;
     }
 
     .right {

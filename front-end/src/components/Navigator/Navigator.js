@@ -12,6 +12,7 @@ const Navigator = () => {
             bar.classList.replace('navigator','newBar')
         } else {
             change.classList.replace('icon-off-search','icon-menu2')
+            bar.classList.replace('newBar','navigator')
         }
     }
 

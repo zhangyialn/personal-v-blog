@@ -1,8 +1,8 @@
 .background {
     width: 100%;
-    height: 54.1vw;
-    background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309151844102.jpg");
-    background-size: 100% 100%;
+    height: 55.1vw;
+    background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309251842563.jpg") center no-repeat;
+    background-size: cover;
     position: relative;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .article {
-    width: 960px;
+    width: 100%;
     height: 100%;
     background-color: white;
     margin: auto;
@@ -78,7 +78,12 @@
 }
 
 @media screen and (max-width: 771px){
+    .background {
+        height: 90vw;
+    }
+
     .container {
+        top: 40%;
         margin-left: -20vw;
     }
 
