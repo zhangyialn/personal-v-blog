@@ -1,6 +1,5 @@
 .background {
     height: 500px;
-    background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309151844102.jpg") 0px -191px;
-    background-size: 100% 691px;
-    background-repeat: no-repeat;
+    background: url("https://zylsblog.oss-cn-beijing.aliyuncs.com/blog-img202309251842563.jpg") center no-repeat;
+    background-size: cover;
 }

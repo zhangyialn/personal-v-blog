@@ -6,26 +6,28 @@ const Navigator = () => {
 
     let styleChanger = ()=>{
         let change = document.querySelector('.change')
-        let bar = document.querySelector('.bar')
+        let pullDownMenu = document.querySelector('.pullDownMenu')
         if(change.classList[1] ==='icon-menu2'){
             change.classList.replace('icon-menu2','icon-off-search')
-            bar.classList.replace('navigator','newBar')
+            pullDownMenu.classList.replace('pullDownMenu2','pullDownMenu1')
         } else {
             change.classList.replace('icon-off-search','icon-menu2')
-            bar.classList.replace('newBar','navigator')
+            pullDownMenu.classList.replace('pullDownMenu1','pullDownMenu2')
         }
     }
 
     return (
         <div>
-            <div className="navigator bar">
-                <h3>暮岁首阳</h3>
-                <div className="right">
-                  <div className="menu" onClick={styleChanger}>
-                      <i className="iconfont icon-menu2 change"></i>
+            <div className="navigator">
+                <div className="topNav">
+                    <h3>暮岁首阳</h3>
+                    <div className="menu" onClick={styleChanger}>
+                        <i className="iconfont icon-menu2 change"></i>
                     </div>
+                </div>
+                <div className="pullDownMenu pullDownMenu2">
                     <div className="search">
-                      <i className="iconfont icon-nav-search"></i>
+                        <i className="iconfont icon-nav-search"></i>
                     </div>
                     <div className="rightInner" >
                         <Link to="/about">
