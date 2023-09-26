@@ -3,7 +3,6 @@ import  './Navigator.css'
 import {Link, NavLink} from "react-router-dom";
 const Navigator = () => {
 
-
     let styleChanger = ()=>{
         let change = document.querySelector('.change')
         let pullDownMenu = document.querySelector('.pullDownMenu')
