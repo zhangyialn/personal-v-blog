@@ -1,7 +1,18 @@
 import React from 'react';
 import Navigator from "../Navigator/Navigator";
 import classes from './Home.module.css'
+import axios from "axios";
 const Home = () => {
+    let [content, setContent] = React.useState('')
+    axios.get('http://localhost:3001/')
+        .then(res => {
+            console.log(res.data)
+            setContent(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
     return (
         <>
             <Navigator/>
