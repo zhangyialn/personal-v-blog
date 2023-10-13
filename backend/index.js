@@ -15,36 +15,28 @@ app.listen(3001,() => {
 let p = fileURLToPath(import.meta.url)
 
 
-let a = path.resolve('/home/zyl/markdown/npm.md')
-
-
-
-app.get('/',(req,res) =>{
-    fs.readdir('/home/zyl/markdown', (err, data) => {
-        if (err) {
+app.get('/',(req,res) => {
+    fs.readdir('/home/zyl/markdown',(err,data) => {
+        if(err){
             console.log(err);
         } else {
-            const arr = []
-            data.toString().split(',').forEach((element) => {
-                fs.readFile(`/home/zyl/markdown/${element}`, (err, content) => {
-                    if (err) {
+            let articleArr = []
+            let arr = data.toString().split(',') 
+            let length = arr.length
+            for(let i = 0;i < length;i++){
+                fs.readFile(`/home/zyl/markdown/${arr[i]}`,(err,content) => {
+                    if(err){
                         console.log(err);
                     } else {
-                        arr.push(content.toString())
+                        articleArr.push(content.toString())
+                    }
+                    if(articleArr.length === length) {
+                        res.send(articleArr)
                     }
                 })
-            })
-        res.send(arr)
+            }
         }
     })
 })
-
-
-
-
-
-
-
-
 
 
