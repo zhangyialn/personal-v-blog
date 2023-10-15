@@ -65,6 +65,7 @@
     background-color: black;
     display: flex;
     justify-content: center;
+    padding-bottom: 10vw;
 }
 
 .bar {
@@ -82,7 +83,7 @@
 }
 
 .articleList {
-    padding: 0 30vw;
+    padding: 0 10vw;
 }
 
 .content .article p {
