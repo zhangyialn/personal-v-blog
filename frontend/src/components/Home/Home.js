@@ -6,11 +6,12 @@ import ReactMarkdown from 'react-markdown'
 import MarkNav from 'markdown-navbar'
 import 'markdown-navbar/dist/navbar.css'
 const Home = () => {
-    let [content, setContent] = React.useState('')
+    let [content, setContent] = React.useState([])
 
     useEffect(() => {
         axios.get('http://localhost:3001/')
             .then(res => {
+                console.log(res.data)
                 setContent(res.data)
             })
             .catch(err => {
@@ -33,9 +34,9 @@ const Home = () => {
                 <div className={classes.bar}>
                 </div>
                 <div className={classes.article}>
-                    <div className={classes.articleList}>
-                        {content.map((ele,index) => <ReactMarkdown key={index}>{ele}</ReactMarkdown>)}
-                    </div>
+                    {content.map((ele, index) => <div key={index} className={classes.articleList}>
+                        <h2 key={index}>{ele.title}</h2>
+                    </div>)}
                 </div>
             </div>
         </>

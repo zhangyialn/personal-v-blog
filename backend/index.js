@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
             const filePaths = result.map(ele => path.join('/home/zyl/markdown/', ele));
 
             const articlePromises = filePaths.map(filePath => {
-                const fileName = path.basename(filePath);
+                const fileName = path.basename(filePath).replace('.md','');
                 return fsPromises.readFile(filePath, { encoding: 'utf-8' })
                     .then(content => {
                         return { title: fileName, content };

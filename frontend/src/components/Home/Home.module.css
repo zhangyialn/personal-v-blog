@@ -62,7 +62,7 @@
 
 .content {
     width: 100%;
-    background-color: black;
+    background-color: white;
     display: flex;
     justify-content: center;
     padding-bottom: 10vw;
@@ -76,6 +76,7 @@
 .article {
     width: 90%;
     margin: auto;
+    padding-top: 5vw;
     border-radius: 10px;
     padding-bottom: 5vw;
     box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
@@ -83,13 +84,17 @@
 }
 
 .articleList {
-    padding: 0 10vw;
+    margin-left: 8vw;
+    margin-bottom: 3vw;
 }
 
-.content .article p {
-    color: black;
+.content .article h2 {
+    color: #3c4858;
 }
 
+.content .article h2:hover {
+    color: #54bbf2;
+}
 
 @media screen and (max-width: 771px){
     .background {
