@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import Navigator from "../Navigator/Navigator";
+import BlogList from "../BlogList/BlogList";
 import classes from './Home.module.css'
 import axios from "axios";
-import ReactMarkdown from 'react-markdown'
-import MarkNav from 'markdown-navbar'
 import 'markdown-navbar/dist/navbar.css'
 const Home = () => {
     let [content, setContent] = React.useState([])
@@ -11,7 +10,6 @@ const Home = () => {
     useEffect(() => {
         axios.get('http://localhost:3001/')
             .then(res => {
-                console.log(res.data)
                 setContent(res.data)
             })
             .catch(err => {
@@ -31,12 +29,8 @@ const Home = () => {
                 </div>
             </div>
             <div className={classes.content}>
-                <div className={classes.bar}>
-                </div>
                 <div className={classes.article}>
-                    {content.map((ele, index) => <div key={index} className={classes.articleList}>
-                        <h2 key={index}>{ele.title}</h2>
-                    </div>)}
+                    <BlogList content={content}></BlogList>
                 </div>
             </div>
         </>

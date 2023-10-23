@@ -15,8 +15,8 @@ const App = () => {
         <Route exact path='/archives' component={Archive}/>
         <Route exact path="/categories" component={Category}/>
         <Route exact path='/tags' component={Tag}/>
-        <Route exact path='/about' component={About} />
-
+        <Route exact path='/about' component={About}/>
+        <Route exact path='/' component={}/>
     </>
   );
 };

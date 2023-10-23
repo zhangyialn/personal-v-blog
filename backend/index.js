@@ -1,7 +1,9 @@
 import fsPromises from 'node:fs/promises'
 import express from 'express'
+import mysql from 'mysql'
 import cors from 'cors'
 import path from 'node:path'
+import matter from 'gray-matter'
 
 const app = express()
 app.use(cors())
@@ -9,25 +11,19 @@ app.listen(3001, () => {
     console.log('服务器启动了');
 })
 
+let db = mysql.createPool({
+    host: "localhost",
+    database: "test",
+    user: "zyl",
+    password: "zyl123456"
+})
+
+
 app.get('/', (req, res) => {
-    fsPromises.readdir('/home/zyl/markdown', { encoding: 'utf-8' })
-        .then(result => {
-            const filePaths = result.map(ele => path.join('/home/zyl/markdown/', ele));
-
-            const articlePromises = filePaths.map(filePath => {
-                const fileName = path.basename(filePath).replace('.md','');
-                return fsPromises.readFile(filePath, { encoding: 'utf-8' })
-                    .then(content => {
-                        return { title: fileName, content };
-                    });
-            });
-
-            return Promise.all(articlePromises);
-        })
-        .then(contents => {
-            res.send(contents)
-        })
-        .catch(err => console.log(err))
+    db.query('select * from Blogs', (err, result) => {
+        if (err) throw err
+        res.send(result)
+    })
 })
 
 

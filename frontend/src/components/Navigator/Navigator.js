@@ -29,7 +29,7 @@ const Navigator = () => {
                         <i className="iconfont icon-nav-search"></i>
                     </div>
                     <div className="rightInner" >
-                        <Link to="/about">
+                        <Link exact to="/about">
                             <i className="iconfont icon-timerauto"></i>
                             <p>关于</p>
                         </Link>

@@ -68,11 +68,6 @@
     padding-bottom: 10vw;
 }
 
-.bar {
-    position: absolute;
-    z-index: 3;
-}
-
 .article {
     width: 90%;
     margin: auto;
@@ -81,11 +76,6 @@
     padding-bottom: 5vw;
     box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
     position: absolute;
-}
-
-.articleList {
-    margin-left: 8vw;
-    margin-bottom: 3vw;
 }
 
 .content .article h2 {
