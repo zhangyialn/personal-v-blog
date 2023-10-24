@@ -7,7 +7,7 @@ const BlogList = ({content}) => {
     return (
         <>
             {content.map((item) =>
-                <Link to="">
+                <Link to={`/blog/${item.id}`}>
                     <div className={classes.titleList}>
                         <h2 key={item.id}>{item.title}</h2>
                     </div>

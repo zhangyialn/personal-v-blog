@@ -18,7 +18,7 @@ try {
                 let fileData = matter(data).data
                 const date = new Date(fileData.date);
                 fileData.date = date.toISOString().slice(0, 19).replace('T', ' ');
-                let sql = `insert into Blogs (title,author,date,tags) values ('${fileData.title}','${fileData.author}','${fileData.date}','${fileData.tags}')`
+                let sql = `update Blogs set path = '${fileData.path}'`
                 db.query(sql,(err,result) => {
                     if (err) throw err
                 })

@@ -7,7 +7,7 @@ import './assets/fonts/iconfont.css'
 import Archive from "./components/Archive/Archive";
 import Category from "./components/Category/Category";
 import Tag from "./components/Tag/Tag";
-
+import BlogDetail from "./components/BlogDetail/BlogDetail";
 const App = () => {
   return (
     <>
@@ -16,7 +16,7 @@ const App = () => {
         <Route exact path="/categories" component={Category}/>
         <Route exact path='/tags' component={Tag}/>
         <Route exact path='/about' component={About}/>
-        <Route exact path='/' component={}/>
+        <Route exact path='/blog/:id' component={BlogDetail}/>
     </>
   );
 };

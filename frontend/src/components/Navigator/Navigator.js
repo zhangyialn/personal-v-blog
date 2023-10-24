@@ -1,7 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import  './Navigator.css'
 import {Link, NavLink} from "react-router-dom";
 const Navigator = () => {
+
+    const [isTransparent, setIsTransparent] = React.useState(true);
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    },[]);
+
+    const handleScroll = () => {
+        let  scrollY = window.scrollY;
+        const scrollThreshold = 0;
+        if (scrollY <= scrollThreshold) {
+            setIsTransparent(true);
+        } else {
+            setIsTransparent(false);
+        }
+    }
 
     let styleChanger = ()=>{
         let change = document.querySelector('.change')
@@ -17,7 +34,7 @@ const Navigator = () => {
 
     return (
         <div>
-            <div className="navigator">
+            <div className={`navigator ${isTransparent ? 'transparent' : ''}`}>
                 <div className="topNav">
                     <h3>暮岁首阳</h3>
                     <div className="menu" onClick={styleChanger}>
