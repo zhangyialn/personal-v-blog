@@ -2,6 +2,7 @@ import fsPromises from 'node:fs/promises'
 import express from 'express'
 import mysql from 'mysql'
 import cors from 'cors'
+import matter from 'gray-matter'
 
 const app = express()
 app.use(cors())
@@ -29,10 +30,11 @@ app.post('/blogs',(req,res) => {
     console.log(req.body.id);
     db.query(`select path from Blogs where id = ${+req.body.id}`,(err,result) => {
         if (err) throw err
-        fsPromises.readFile(result[0].path.toString(),{encoding: 'utf-8'},(err,data) => {
-            if (err) throw err
-            res.send(data)
-        })
+        fsPromises.readFile(result[0].path.toString(),{encoding: 'utf-8'})
+            .then((content) => {
+                let blog = matter(content).content
+                res.send(blog)
+            })
     })
 })
 

@@ -18,9 +18,9 @@ try {
                 let fileData = matter(data).data
                 const date = new Date(fileData.date);
                 fileData.date = date.toISOString().slice(0, 19).replace('T', ' ');
-                let sql = `update Blogs set path = '${fileData.path}'`
-                db.query(sql,(err,result) => {
+                db.query(`update Blogs set path ='${fileData.path}' where title ='${fileData.title}'`,(err,result) => {
                     if (err) throw err
+                    console.log(result)
                 })
             })
         })

@@ -1,0 +1,21 @@
+.content {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10vw;
+}
+
+.content p {
+    color: black;
+}
+
+.article {
+    width: 70%;
+    margin: auto;
+    padding-top: 5vw;
+    border-radius: 10px;
+    padding-bottom: 5vw;
+    box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
+    position: absolute;
+}

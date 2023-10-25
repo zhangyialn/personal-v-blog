@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import Navigator from "../Navigator/Navigator";
 import Background from "../Background/Background";
 import axios from "axios";
+import Markdown from "react-markdown";
+import classes from "./BlogDetail.module.css";
 const BlogDetail = ({match}) => {
    const id = match.params.id
 
@@ -11,6 +13,7 @@ const BlogDetail = ({match}) => {
         axios.post('http://localhost:3001/blogs', {id:id})
             .then(res => {
                 console.log(res.data)
+                setContent(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -21,8 +24,12 @@ const BlogDetail = ({match}) => {
         <>
             <Navigator/>
             <Background/>
-            <div>
-                <h1>博客细节</h1>
+            <div className={classes.content}>
+                <div className={classes.article}>
+                    <Markdown>
+                        {content}
+                    </Markdown>
+                </div>
             </div>
         </>
     );
