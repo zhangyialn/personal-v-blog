@@ -1,2 +1,3 @@
 # personal-v-blog
-个人博客,现在只有前端，前段也还不完善
+- 个人博客，前端react，后端nodejs+express+mysql
+- 前端小白，博客还未初步完成
