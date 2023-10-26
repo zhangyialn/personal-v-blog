@@ -31,6 +31,7 @@ function dbQueryAsync(sql,values) {
 app.get('/', async (req, res) => {
     try {
         const files = await fsPromises.readdir('/home/zyl/markdown',{encoding: 'utf-8'})
+        const allBlogs = await dbQueryAsync('select * from Blogs')
 
         for (const file of files) {
             const filePath = path.join('/home/zyl/markdown',file)
@@ -40,8 +41,11 @@ app.get('/', async (req, res) => {
             fileData.date = date.toISOString().slice(0,19).replace('T',' ')
 
             //检查数据库中是否存在具有相同标题的行
-            const results = await dbQueryAsync(`select * from Blogs where title = ?`,[fileData.title]);
-            if (results.length > 0) {
+            console.log(fileData.title);
+            const isExist = allBlogs.some(blog => blog.title === fileData.title)
+            console.log('上面完成');
+            console.log(isExist);
+            if (isExist) {
                 await dbQueryAsync(`update Blogs set author = ?,path = ?,date = ?,tags = ? where title = ?`,[fileData.author,filePath,fileData.date,fileData.tags,fileData.title])
                 console.log('更新成功');
             } else {
@@ -49,15 +53,16 @@ app.get('/', async (req, res) => {
                 console.log('插入成功');
             }
         }
-        res.send('操作完成')
+
+        db.query('select * from Blogs', (err, result) => {
+            if (err) throw err
+            console.log(result);
+            res.send(result)
+        })
     } catch (e) {
         console.log(e);
         res.status(500).send('服务器错误')
     }
-    db.query('select * from Blogs', (err, result) => {
-        if (err) throw err
-        res.send(result)
-    })
 })
 
 app.post('/blogs',(req,res) => {
