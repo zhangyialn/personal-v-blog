@@ -73,7 +73,24 @@ app.get('/', async (req, res) => {
                 console.log('分类插入成功');
             }
         }
+        // 创建记录将博客文章和标签、分类相关联
+        const blogs = await dbQueryAsync('select * from Blogs')
+        const tags = await dbQueryAsync('select * from Tags')
+        const categories = await dbQueryAsync('select * from Categories')
+        for (const blog of blogs) {
+            for (const tag of tags) {
+                if (blog.tags === tag.name) {
+                    await dbQueryAsync(`insert into BlogTags (blog_id,tag_id) values (?,?)`,[blog.id,tag.id])
+                }
+            }
+            for (const category of categories) {
+                if (blog.categories === category.name) {
+                    await dbQueryAsync(`insert into BlogCategories (blog_id,category_id) values (?,?)`,[blog.id,category.id])
+                }
+            }
+        }
 
+        // 从数据库中获取所有博客文章
         db.query('select * from Blogs', (err, result) => {
             if (err) throw err
             res.send(result)
