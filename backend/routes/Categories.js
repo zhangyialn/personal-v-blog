@@ -10,8 +10,8 @@ let db = mysql.createPool({
 })
 
 try {
-    router.post('/', (req,res) => {
-        db.query(`select * from Blogs where tags = '${req.body.name}'`,(err,result) => {
+    router.get('/', (req,res) => {
+        db.query(`select * from Categories`,(err,result) => {
             if(err) throw err
             res.send(result)
         })
