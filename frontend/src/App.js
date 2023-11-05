@@ -8,6 +8,7 @@ import Archive from "./components/Archive/Archive";
 import Category from "./components/Category/Category";
 import Tag from "./components/Tag/Tag";
 import BlogDetail from "./components/BlogDetail/BlogDetail";
+import TagFilter from "./components/TagFilter/TagFilter";
 const App = () => {
   return (
     <>
@@ -17,7 +18,7 @@ const App = () => {
         <Route exact path='/tags' component={Tag}/>
         <Route exact path='/about' component={About}/>
         <Route exact path='/blogs/:id' component={BlogDetail}/>
-        {/*<Route exact path='/tags/:tag' component={}/>*/}
+        <Route exact path='/tags/:tag' component={TagFilter}/>
         {/*<Route exact path='/categories/:category' component={}/>*/}
     </>
   );

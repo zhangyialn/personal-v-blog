@@ -62,21 +62,30 @@
 
 .content {
     width: 100%;
-    background-color: white;
+    background-color: #eeeeee;
     display: flex;
-    justify-content: center;
-    padding-bottom: 10vw;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: .5vw;
+    position: relative;
 }
 
 .article {
     width: 85%;
-    margin: auto;
     padding-top: 5vw;
+    background-color: white;
     border-radius: 10px;
     padding-bottom: 5vw;
-    box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
-    position: absolute;
+    box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 20px 12px rgba(0,0,0,.2);
 }
+
+.button {
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
+}
+
 
 .content .article h2 {
     color: #3c4858;

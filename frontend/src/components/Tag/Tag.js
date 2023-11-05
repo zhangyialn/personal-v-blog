@@ -26,9 +26,11 @@ const Tag = () => {
             <Background/>
             <div className={classes.tagList}>
                 {tags.map((item) =>
-                    <div>
-                        <p key={item.id}>-{item.name}</p>
-                    </div>
+                    <Link to={`/tags/${item.name}`}>
+                        <div>
+                            <p key={item.id}>{item.name}</p>
+                        </div>
+                    </Link>
                 )}
             </div>
         </>

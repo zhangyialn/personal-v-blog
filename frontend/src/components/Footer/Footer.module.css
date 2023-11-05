@@ -1,0 +1,9 @@
+.footerBox {
+    padding-top: 5vw;
+    padding-bottom: 1vw;
+}
+
+.footerBox a {
+    color: black;
+    text-decoration: none;
+}

@@ -36,7 +36,9 @@ const Navigator = () => {
         <div>
             <div className={`navigator ${isTransparent ? 'transparent' : ''}`}>
                 <div className="topNav">
-                    <h3>暮岁首阳</h3>
+                    <Link exact to="/">
+                        <h3>暮岁首阳</h3>
+                    </Link>
                     <div className="menu" onClick={styleChanger}>
                         <i className="iconfont icon-menu2 change"></i>
                     </div>

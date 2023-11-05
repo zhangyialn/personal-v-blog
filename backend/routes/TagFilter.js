@@ -10,13 +10,14 @@ let db = mysql.createPool({
 })
 
 try {
-    router.get('/',async (req,res) => {
-        db.query('select * from Tags',(err,result) => {
+    router.post('/',async (req,res) => {
+        db.query(`select * from Blogs where tags = '${req.body.name}'`,(err,result) => {
             if(err) throw err
             res.send(result)
         })
     })
-} catch(e) {
+} catch (e) {
     console.log(e);
 }
+
 export default router;
