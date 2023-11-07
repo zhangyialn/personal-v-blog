@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import Navigator from "../Navigator/Navigator";
 import Background from "../Background/Background";
+import Footer from "../Footer/Footer";
+import TopScrollButton from "../../common/TopScrollButton/TopScrollButton";
 import axios from "axios";
 import Markdown from "react-markdown";
 import classes from "./BlogDetail.module.css";
@@ -29,6 +31,10 @@ const BlogDetail = ({match}) => {
                     <Markdown>
                         {content}
                     </Markdown>
+                </div>
+                <Footer/>
+                <div className={classes.button}>
+                    <TopScrollButton/>
                 </div>
             </div>
         </>

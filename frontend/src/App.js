@@ -9,6 +9,7 @@ import Category from "./components/Category/Category";
 import Tag from "./components/Tag/Tag";
 import BlogDetail from "./components/BlogDetail/BlogDetail";
 import TagFilter from "./components/TagFilter/TagFilter";
+import CategoryFilter from "./components/CategoryFilter/CategoryFilter";
 const App = () => {
   return (
     <>
@@ -19,7 +20,7 @@ const App = () => {
         <Route exact path='/about' component={About}/>
         <Route exact path='/blogs/:id' component={BlogDetail}/>
         <Route exact path='/tags/:tag' component={TagFilter}/>
-        {/*<Route exact path='/categories/:category' component={}/>*/}
+        <Route exact path='/categories/:category' component={CategoryFilter}/>
     </>
   );
 };

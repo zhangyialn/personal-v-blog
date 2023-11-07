@@ -3,6 +3,7 @@ import express from "express";
 import path from "node:path";
 import matter from "gray-matter";
 import mysql from "mysql";
+import { log } from "node:console";
 const router = express.Router();
 
 let db = mysql.createPool({
@@ -65,19 +66,29 @@ router.get('/', async (req, res) => {
                 console.log('分类插入成功');
             }
         }
-        // 创建记录将博客文章和标签、分类相关联
+        // 创建记录将博客文章和标签、分类相关联,如果已经存在则不插入
         const blogs = await dbQueryAsync('select * from Blogs')
         const tags = await dbQueryAsync('select * from Tags')
         const categories = await dbQueryAsync('select * from Categories')
+        
         for (const blog of blogs) {
             for (const tag of tags) {
                 if (blog.tags === tag.name) {
-                    await dbQueryAsync(`insert into BlogTags (blog_id,tag_id) values (?,?)`,[blog.id,tag.id])
+                    const existingRelation = await dbQueryAsync('select * from BlogTags where blog_id = ? and tag_id = ?', [blog.id, tag.id]);
+                    console.log(existingRelation);
+                    if (existingRelation.length === 0) {
+                        await dbQueryAsync('insert into BlogTags (blog_id, tag_id) values (?, ?)', [blog.id, tag.id]);
+                    }
                 }
             }
+
             for (const category of categories) {
                 if (blog.categories === category.name) {
-                    await dbQueryAsync(`insert into BlogCategories (blog_id,category_id) values (?,?)`,[blog.id,category.id])
+                    const existingRelation = await dbQueryAsync('select * from BlogCategories where blog_id = ? and category_id = ?', [blog.id, category.id]);
+                    console.log(existingRelation);
+                    if (existingRelation.length === 0) {
+                        await dbQueryAsync('insert into BlogCategories (blog_id, category_id) values (?, ?)', [blog.id, category.id]);
+                    }
                 }
             }
         }

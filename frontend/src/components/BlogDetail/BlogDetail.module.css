@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-items: center;
     padding-bottom: .5vw;
+    position: relative;
 }
 
 .content p {
@@ -16,7 +17,14 @@
     width: 70%;
     margin: auto;
     padding-top: 5vw;
+    background-color: white;
     border-radius: 10px;
     padding-bottom: 5vw;
     box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
+}
+
+.button {
+    position: absolute;
+    bottom: 2vw;
+    right: 2vw;
 }

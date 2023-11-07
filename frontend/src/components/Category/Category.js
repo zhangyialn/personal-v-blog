@@ -4,6 +4,7 @@ import Background from "../Background/Background";
 import classes from './Category.module.css'
 import axios from "axios";
 import Footer from "../Footer/Footer";
+import {Link} from "react-router-dom";
 const Category = () => {
 
     const [categories, setCategories] = React.useState([]) // 用于存储标签数据
@@ -26,9 +27,11 @@ const Category = () => {
             <div className={classes.content}>
                 <div className={classes.categoryList}>
                     {categories.map((item) =>
-                        <div>
-                            <h2 key={item.id}>{item.name}</h2>
-                        </div>
+                        <Link exact to={`/categories/${item.name}`}>
+                            <div>
+                                <h2 key={item.id}>{item.name}</h2>
+                            </div>
+                        </Link>
                     )}
                 </div>
                 <Footer/>
