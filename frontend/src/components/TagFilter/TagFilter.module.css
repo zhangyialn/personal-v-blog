@@ -1,0 +1,30 @@
+.content {
+    width: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: .5vw;
+}
+
+.blogList {
+    width: 85%;
+    background-color: white;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 5vw;
+    border-radius: 10px;
+    padding-bottom: 5vw;
+    box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
+}
+
+.blogList h2 {
+    color: #3c4858;
+    margin-right: 2vw;
+}
+
+.blogList h2:hover {
+    color: #54bbf2;
+}
