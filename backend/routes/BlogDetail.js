@@ -12,8 +12,10 @@ let db = mysql.createPool({
 })
 
 router.post('/',(req,res) => {
-    console.log(req.body.id);
-    db.query(`select path from Blogs where id = ${+req.body.id}`,(err,result) => {
+    console.log(req.body.title);
+    const query = 'select path FROM Blogs where title = ?';
+    const values = [req.body.title]
+    db.query(query,values,(err,result) => {
         if (err) throw err
         fsPromises.readFile(result[0].path.toString(),{encoding: 'utf-8'})
             .then((content) => {

@@ -7,12 +7,13 @@ import axios from "axios";
 import Markdown from "react-markdown";
 import classes from "./BlogDetail.module.css";
 const BlogDetail = ({match}) => {
-   const id = match.params.id
+   const title = match.params.title
+    console.log(title)
 
     let [content, setContent] = React.useState()
 
     useEffect(() => {
-        axios.post('http://localhost:3001/blogs', {id:id})
+        axios.post('http://localhost:3001/blogs', {title:title})
             .then(res => {
                 console.log(res.data)
                 setContent(res.data)

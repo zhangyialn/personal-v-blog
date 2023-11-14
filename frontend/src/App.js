@@ -18,7 +18,7 @@ const App = () => {
         <Route exact path="/categories" component={Category}/>
         <Route exact path='/tags' component={Tag}/>
         <Route exact path='/about' component={About}/>
-        <Route exact path='/blogs/:id' component={BlogDetail}/>
+        <Route exact path='/blogs/:title' component={BlogDetail}/>
         <Route exact path='/tags/:tag' component={TagFilter}/>
         <Route exact path='/categories/:category' component={CategoryFilter}/>
     </>

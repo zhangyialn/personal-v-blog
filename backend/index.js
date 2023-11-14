@@ -6,6 +6,7 @@ import Tag from "./routes/Tag.js";
 import TagFilter from "./routes/TagFilter.js";
 import Categories from "./routes/Categories.js";
 import CategoryFilter from './routes/CategoryFilter.js'
+import Archive from "./routes/Archive.js";
 const app = express()
 app.use(cors())
 app.use(express.json())
@@ -30,3 +31,6 @@ app.use('/categories',Categories)
 
 // 挂载分类筛选路由
 app.use('/categories',CategoryFilter)
+
+// 挂载归档页面路由
+app.use('/archive',Archive)

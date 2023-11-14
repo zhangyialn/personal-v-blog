@@ -75,7 +75,6 @@ router.get('/', async (req, res) => {
             for (const tag of tags) {
                 if (blog.tags === tag.name) {
                     const existingRelation = await dbQueryAsync('select * from BlogTags where blog_id = ? and tag_id = ?', [blog.id, tag.id]);
-                    console.log(existingRelation);
                     if (existingRelation.length === 0) {
                         await dbQueryAsync('insert into BlogTags (blog_id, tag_id) values (?, ?)', [blog.id, tag.id]);
                     }
@@ -85,7 +84,6 @@ router.get('/', async (req, res) => {
             for (const category of categories) {
                 if (blog.categories === category.name) {
                     const existingRelation = await dbQueryAsync('select * from BlogCategories where blog_id = ? and category_id = ?', [blog.id, category.id]);
-                    console.log(existingRelation);
                     if (existingRelation.length === 0) {
                         await dbQueryAsync('insert into BlogCategories (blog_id, category_id) values (?, ?)', [blog.id, category.id]);
                     }
