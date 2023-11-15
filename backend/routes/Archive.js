@@ -21,7 +21,9 @@ router.get('/',(req,res) => {
             const year = blog.date.getFullYear();
             const month = blog.date.getMonth() + 1;
             const day = blog.date.getDate();
-            const date = `${month}-${day}`;
+            const formattedMonth = month > 9 ? month : `0${month}`;
+            const formattedDay = day > 9 ? day : `0${day}`;
+            const date = `${formattedMonth}-${formattedDay}`;
             if (!accumulate[year]) {
                 accumulate[year] = {year, blog: [],count };
             }

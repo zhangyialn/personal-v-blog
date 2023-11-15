@@ -27,7 +27,7 @@ const CategoryFilter = ({match}) => {
             <div className={classes.content}>
                 <div className={classes.blogList}>
                     {content.map((item) =>
-                        <Link to={`/blogs/${item.id}`}>
+                        <Link exact to={`/blogs/${item.title}`}>
                             <h2 key={item.id}>{item.title}</h2>
                         </Link>
                     ) }

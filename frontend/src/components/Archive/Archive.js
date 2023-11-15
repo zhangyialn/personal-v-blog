@@ -4,6 +4,8 @@ import Background from "../Background/Background";
 import classes from './Archive.module.css'
 import Footer from "../Footer/Footer";
 import axios from "axios";
+import {Link} from "react-router-dom";
+import TopScrollButton from "../../common/TopScrollButton/TopScrollButton";
 
 const Archive = () => {
 
@@ -30,14 +32,26 @@ const Archive = () => {
                 <div className={classes.blogList}>
                     <h1>{`共计${count}篇文章`}</h1>
                     {archives.map((item) =>
-                        <h2>{item.year}</h2>
-
+                        <div className={classes.contentDetail}>
+                            <h2>{item.year}</h2>
+                            {item.blog.map((blog) =>
+                                <Link exact to={`/blogs/${blog.title}`}>
+                                    <div className={classes.blog}>
+                                        <span>{blog.date}</span>
+                                        <span>{blog.title}</span>
+                                    </div>
+                                </Link>
+                            )}
+                        </div>
                     )}
                 </div>
                 <Footer/>
+                <div className={classes.button}>
+                    <TopScrollButton/>
+                </div>
             </div>
         </>
-    );
+    )
 };
 
 export default Archive;
