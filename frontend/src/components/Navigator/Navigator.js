@@ -4,12 +4,14 @@ import {Link, NavLink} from "react-router-dom";
 const Navigator = () => {
 
     const [isTransparent, setIsTransparent] = React.useState(true);
+    const [isSearchOpen, setIsSearchOpen] = React.useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     },[]);
 
+    // 监听滚动条
     const handleScroll = () => {
         let  scrollY = window.scrollY;
         const scrollThreshold = 0;
@@ -19,6 +21,11 @@ const Navigator = () => {
             setIsTransparent(false);
         }
     }
+
+    // 监听搜索框
+    const toggleSearch = () => {
+        setIsSearchOpen(!isSearchOpen);
+    };
 
     let styleChanger = ()=>{
         let change = document.querySelector('.change')
@@ -44,7 +51,7 @@ const Navigator = () => {
                     </div>
                 </div>
                 <div className="pullDownMenu pullDownMenu2">
-                    <div className="search">
+                    <div className="search" onClick={toggleSearch}>
                         <i className="iconfont icon-nav-search"></i>
                     </div>
                     <div className="rightInner" >
@@ -79,6 +86,20 @@ const Navigator = () => {
                     </div>
                 </div>
             </div>
+
+            {isSearchOpen && (
+                <div className="search-overlay">
+                    <div className="search-box">
+                        <div>
+                            <h1>搜索</h1>
+                            <i className="iconfont icon-off-search" onClick={toggleSearch}></i>
+                        </div>
+                        <hr/>
+                        <input type="text" placeholder="搜索..." className="input"/>
+
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

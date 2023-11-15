@@ -117,6 +117,62 @@ a {
 
 }
 
+/* 为遮罩层添加样式 */
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+
+}
+
+.search-box {
+    width: 50%;
+    background-color: white;
+    display: flex;
+    position: relative;
+    margin: 5vw auto;
+    flex-direction: column;
+    border-radius: .1vw;
+}
+
+.search-box h1 {
+    padding-left: 50%;
+    margin-left: -2.5vw;
+    color: #3c4858;
+    font-size: 2.5vw;
+}
+
+.search-box i {
+    color: gray;
+    position: absolute;
+    top: 5%;
+    right: 1%;
+}
+
+.search-box i:hover {
+    color: #075e97;
+    cursor: pointer;
+}
+
+.search-box .input {
+    all: initial;
+    height: 2vw;
+    margin: 5vw 2vw;
+    margin-top: 3vw;
+    border-bottom: solid gray .1vw;
+}
+
+/* 遮罩层可见时显示 */
+.search-overlay.visible {
+    display: flex;
+}
+
 @media screen and (min-width: 771px) {
     .menu {
         display: none;
