@@ -25,6 +25,8 @@
 
 .blogContent {
     margin: 0 4vw;
+    padding-bottom: 4vw;
+    border-bottom: 0.1vw solid gray;
 }
 
 .navbar {
@@ -35,7 +37,7 @@
 }
 
 .button {
-    position: absolute;
+    position: fixed;
     bottom: 2vw;
     right: 2vw;
 }

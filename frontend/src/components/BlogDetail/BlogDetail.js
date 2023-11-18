@@ -9,14 +9,15 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import NavBar from 'markdown-navbar';
 import classes from "./BlogDetail.module.css";
+import Comment from "../Comment/Comment";
 
 const BlogDetail = ({match}) => {
-   const title = match.params.title
-    console.log(title)
+    const title = match.params.title
 
     let [content, setContent] = React.useState()
     const ref = React.useRef(null)
-    console.log(ref.current)
+    const buttonRef = React.useRef(null)
+    console.log(buttonRef.current)
 
     useEffect(() => {
         axios.post('http://localhost:3001/blogs', {title:title})
@@ -39,7 +40,16 @@ const BlogDetail = ({match}) => {
                 ref.current.style.top = '2vw'
             }
         }
+        if(buttonRef.current) {
+            if (window.scrollY >= 450) {
+                buttonRef.current.style.display = 'block'
+            } else {
+                buttonRef.current.style.display = 'none'
+            }
+        }
     });
+
+
 
     // 代码高亮
     const components = {
@@ -72,12 +82,13 @@ const BlogDetail = ({match}) => {
                             {content}
                         </Markdown>
                     </div>
+                    <Comment/>
                 </div>
                 <Footer/>
                 <div className={classes.navbar} ref={ref}>
                     <NavBar source={content} />
                 </div>
-                <div className={classes.button}>
+                <div className={classes.button} ref={buttonRef}>
                     <TopScrollButton/>
                 </div>
             </div>
