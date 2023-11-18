@@ -1,12 +1,12 @@
 .content {
     width: 100%;
     background-color: #eeeeee;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     padding-bottom: .5vw;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: scroll;
 }
 
 .content p {
@@ -14,7 +14,7 @@
 }
 
 .article {
-    width: 70%;
+    width: 62%;
     margin: auto;
     padding-top: 5vw;
     background-color: white;
@@ -23,8 +23,25 @@
     box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
 }
 
+.blogContent {
+    margin: 0 4vw;
+}
+
+.navbar {
+    width: 15vw;
+    position: absolute;
+    top: 2vw;
+    right: 2.0vw;
+}
+
 .button {
     position: absolute;
     bottom: 2vw;
     right: 2vw;
+}
+
+@media screen and (max-width: 426px){
+    .navbar {
+        display: none;
+    }
 }
