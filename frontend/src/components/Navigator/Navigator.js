@@ -96,7 +96,6 @@ const Navigator = () => {
                         </div>
                         <hr/>
                         <input type="text" placeholder="搜索..." className="input"/>
-
                     </div>
                 </div>
             )}

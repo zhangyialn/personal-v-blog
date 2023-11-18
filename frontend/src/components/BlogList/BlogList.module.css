@@ -1,10 +1,49 @@
-.titleList {
+.list {
     margin-left: 8vw;
     margin-bottom: 5vw;
 }
 
+.titleList {
+    margin-bottom: 0.6vw;
+}
+
 a {
     text-decoration: none;
+}
+
+.contentList {
+    width: 88%;
+    color : #3c4858;
+    font-size: 1.4vw;
+    margin-bottom: 0.8vw;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3; /* 限制显示的行数 */
+    cursor: pointer;
+}
+
+.contentList:hover {
+    color: #54bbf2;
+}
+
+.list i {
+    color: #3c4858;
+}
+
+.date {
+    color: #3c4858;
+    margin-left: 0.6vw;
+    margin-right: 2.5vw;
+}
+
+.tag {
+    color: #3c4858;
+    margin-left: 0.6vw;
+}
+
+.tag:hover {
+    color: #54bbf2;
 }
 
 

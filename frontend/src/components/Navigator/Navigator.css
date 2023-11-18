@@ -42,6 +42,7 @@ i {
 .search {
     line-height: 5vw;
     float: right;
+    cursor: pointer;
 }
 
 .rightInner i:hover, .search i:hover, p:hover {
@@ -70,51 +71,6 @@ a {
 
 .transparent {
     background-color: transparent;
-}
-
-@media screen and (max-width: 771px){
-    .navigator {
-        height: 8vw;
-    }
-
-    .topNav {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .pullDownMenu1 {
-        padding: 0;
-        height: 35vw;
-        background-color: #075e97;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-evenly;
-        align-items: center;
-        z-index: 2;
-    }
-
-    .pullDownMenu2 {
-        display: none;
-    }
-
-    h3 {
-        font-size: 2.4vw;
-        line-height: 8vw;
-        padding-left: 6vw;
-    }
-
-    .menu {
-        padding-right: 6vw;
-    }
-
-    .menu i {
-        font-size: 4vw;
-    }
-
-    .right {
-        padding-right: 6vw;
-    }
-
 }
 
 /* 为遮罩层添加样式 */
@@ -171,6 +127,51 @@ a {
 /* 遮罩层可见时显示 */
 .search-overlay.visible {
     display: flex;
+}
+
+@media screen and (max-width: 771px){
+    .navigator {
+        height: 8vw;
+    }
+
+    .topNav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pullDownMenu1 {
+        padding: 0;
+        height: 35vw;
+        background-color: #075e97;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 2;
+    }
+
+    .pullDownMenu2 {
+        display: none;
+    }
+
+    h3 {
+        font-size: 2.4vw;
+        line-height: 8vw;
+        padding-left: 6vw;
+    }
+
+    .menu {
+        padding-right: 6vw;
+    }
+
+    .menu i {
+        font-size: 4vw;
+    }
+
+    .right {
+        padding-right: 6vw;
+    }
+
 }
 
 @media screen and (min-width: 771px) {

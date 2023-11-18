@@ -1,9 +1,9 @@
 import fsPromises from "node:fs/promises";
+import fs from "node:fs";
 import express from "express";
 import path from "node:path";
 import matter from "gray-matter";
 import mysql from "mysql";
-import { log } from "node:console";
 const router = express.Router();
 
 let db = mysql.createPool({
@@ -92,9 +92,31 @@ router.get('/', async (req, res) => {
         }
 
         // 从数据库中获取所有博客文章
-        db.query('select * from Blogs', (err, result) => {
-            if (err) throw err
-            res.send(result)
+        const query = 'select * from Blogs order by Year(date) desc,Month(date) desc,Day(date) desc';
+        db.query(query, async(err,result) => {
+            if (err) {
+                console.log(err);
+            }
+            const archiveList = result.map(blog => {
+                const year = blog.date.getFullYear();
+                const month = blog.date.getMonth() + 1;
+                const day = blog.date.getDate();
+                const formattedMonth = month > 9 ? month : `0${month}`;
+                const formattedDay = day > 9 ? day : `0${day}`;
+                const date = `${year}-${formattedMonth}-${formattedDay}`;
+                const content = matter(fs.readFileSync(blog.path.toString(),{encoding: 'utf-8'})).content;
+
+                return {
+                    title: blog.title,
+                    date: date,
+                    tags: blog.tags,
+                    categories: blog.categories,
+                    content: content
+                };
+            });
+
+            // 发送数据
+            res.send(archiveList);
         })
     } catch (e) {
         console.log(e);
