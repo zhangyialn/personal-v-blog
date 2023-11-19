@@ -12,3 +12,9 @@
     font-size: 2.5vw;
     color: #075e97;
 }
+
+@media screen and (max-width: 426px){
+    .button {
+        display: none;
+    }
+}

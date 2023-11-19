@@ -25,6 +25,10 @@ const BlogList = ({content}) => {
                         <Link exact to={`/tags/${item.tags}`}>
                             <span className={classes.tag}>#{item.tags}</span>
                         </Link>
+                        <i className="iconfont icon-paper"></i>
+                        <Link exact to={`/categories/${item.categories}`}>
+                            <span className={classes.categoriy}>#{item.categories}</span>
+                        </Link>
                     </div>
                 </div>
             )}

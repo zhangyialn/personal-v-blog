@@ -44,7 +44,6 @@ router.get('/', async (req, res) => {
             console.log(isExist);
             if (isExist) {
                 await dbQueryAsync(`update Blogs set author = ?,path = ?,date = ?,tags = ?,categories = ? where title = ?`,[fileData.author,filePath,fileData.date,fileData.tags,fileData.categories,fileData.title])
-                console.log('更新成功');
             } else {
                 await dbQueryAsync(`insert into Blogs (title,author,path,date,tags,categories) values (?,?,?,?,?)`,[fileData.title,fileData.author,filePath,fileData.date,fileData.tags,fileData.categories])
                 console.log('插入成功');
@@ -52,7 +51,6 @@ router.get('/', async (req, res) => {
             // 检查数据库中是否存在具有相同标签的行,如果存在则不插入,不存在则插入
             const tagsIsExist = allTags.some(tag => tag.name === fileData.tags)
             if (tagsIsExist) {
-                console.log('标签已存在');
             } else {
                 await dbQueryAsync(`insert into Tags (name) values (?)`,[fileData.tags])
                 console.log('标签插入成功');
@@ -60,7 +58,6 @@ router.get('/', async (req, res) => {
             // 检查数据库中是否存在具有相同分类的行,如果存在则不插入,不存在则插入
             const categoriesIsExist = allCategories.some(category => category.name === fileData.categories)
             if (categoriesIsExist) {
-                console.log('分类已存在');
             } else {
                 await dbQueryAsync(`insert into Categories (name) values (?)`,[fileData.categories])
                 console.log('分类插入成功');

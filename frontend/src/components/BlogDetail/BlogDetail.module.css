@@ -30,20 +30,37 @@
 }
 
 .navbar {
+    color: #3c4858;
     width: 15vw;
     position: absolute;
     top: 2vw;
     right: 2.0vw;
 }
 
-.button {
+.navbar i {
+    color: #3c4858;
+    font-size: 2vw;
+    margin-left: 1.5vw;
+    margin-right: 1vw;
+}
+
+.navbar span {
+    font-size: 1.8vw;
+}
+
+
+.topButton {
     position: fixed;
     bottom: 2vw;
     right: 2vw;
 }
 
 @media screen and (max-width: 426px){
+    .article {
+        width: 100%;
+    }
     .navbar {
         display: none;
     }
+
 }

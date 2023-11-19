@@ -40,9 +40,20 @@ a {
 .tag {
     color: #3c4858;
     margin-left: 0.6vw;
+    margin-right: 2.5vw;
 }
 
 .tag:hover {
+    color: #54bbf2;
+}
+
+.categoriy {
+    color: #3c4858;
+    margin-left: 0.6vw;
+    margin-right: 2.5vw;
+}
+
+.categoriy:hover {
     color: #54bbf2;
 }
 

@@ -10,6 +10,17 @@ const TopScrollButton = () => {
         });
     };
 
+    window.addEventListener('scroll', () => {
+        const button = document.querySelector(`.${classes.button}`)
+        if (button) {
+            if (window.scrollY >= 450) {
+                button.style.display = 'block'
+            } else {
+                button.style.display = 'none'
+            }
+        }
+    });
+
     return (
        <>
            <button className={classes.button} onClick={scrollToTop}>

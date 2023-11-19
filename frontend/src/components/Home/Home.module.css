@@ -81,7 +81,7 @@
 }
 
 .button {
-    position: absolute;
+    position: fixed;
     bottom: 2vw;
     right: 2vw;
 }
@@ -111,6 +111,12 @@
 
     .down {
         display: none;
+    }
+}
+
+@media screen and (max-width: 426px){
+    .article {
+        width: 100%;
     }
 }
 

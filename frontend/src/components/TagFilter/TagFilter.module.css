@@ -6,25 +6,52 @@
     justify-content: space-around;
     align-items: center;
     padding-bottom: .5vw;
+    position: relative;
 }
 
 .blogList {
     width: 85%;
     background-color: white;
     margin-top: auto;
-    display: flex;
-    justify-content: center;
     padding-top: 5vw;
     border-radius: 10px;
     padding-bottom: 5vw;
     box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
 }
 
-.blogList h2 {
+.blogList h1 {
+    margin-left: 8vw;
+    margin-bottom: 4vw;
     color: #3c4858;
-    margin-right: 2vw;
 }
 
-.blogList h2:hover {
+.contentDetail {
+    margin-left: 8vw;
+}
+
+.contentDetail h2 {
+    margin-bottom: 2vw;
+    color: #3c4858;
+}
+
+.blog {
+    font-size: 1.5vw;
+    color: #3c4858;
+    padding-left: 3vw;
+    padding-top: 1.25vw;
+    padding-bottom: 1.25vw;
+}
+.blog:hover {
     color: #54bbf2;
+    background-color: rgba(0,0,0,.01);
+}
+
+.blog span {
+    margin-right: 3vw;
+}
+
+.button {
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
 }

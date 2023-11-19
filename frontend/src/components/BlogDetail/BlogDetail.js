@@ -40,13 +40,6 @@ const BlogDetail = ({match}) => {
                 ref.current.style.top = '2vw'
             }
         }
-        if(buttonRef.current) {
-            if (window.scrollY >= 450) {
-                buttonRef.current.style.display = 'block'
-            } else {
-                buttonRef.current.style.display = 'none'
-            }
-        }
     });
 
 
@@ -86,9 +79,11 @@ const BlogDetail = ({match}) => {
                 </div>
                 <Footer/>
                 <div className={classes.navbar} ref={ref}>
+                    <i className="iconfont icon-menu2"></i>
+                    <span>目录</span>
                     <NavBar source={content} />
                 </div>
-                <div className={classes.button} ref={buttonRef}>
+                <div className={classes.topButton}>
                     <TopScrollButton/>
                 </div>
             </div>
