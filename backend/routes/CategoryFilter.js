@@ -37,7 +37,15 @@ try {
 
             // 将对象转换为数组，并按年份降序排序
             const archiveList = Object.values(archive).sort((a,b) => b.year - a.year);
-            console.log(archiveList)
+
+            // 如果没有文章,则删除这个标签
+            if (archiveList.length === 0) {
+                db.query(`delete from Categories where name = '${req.body.name}'`, (err,result) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                })
+            }
             // 发送数据
             res.send(archiveList);
         })

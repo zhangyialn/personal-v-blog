@@ -41,7 +41,6 @@ router.get('/', async (req, res) => {
 
             // 检查数据库中是否存在具有相同标题的行,如果存在则更新,不存在则插入
             const isExist = allTitles.some(title => title.title === fileData.title)
-            console.log(isExist);
             if (isExist) {
                 await dbQueryAsync(`update Blogs set author = ?,path = ?,date = ?,tags = ?,categories = ? where title = ?`,[fileData.author,filePath,fileData.date,fileData.tags,fileData.categories,fileData.title])
             } else {

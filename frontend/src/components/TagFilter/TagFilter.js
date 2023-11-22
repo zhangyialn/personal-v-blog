@@ -9,7 +9,7 @@ import TopScrollButton from "../../common/TopScrollButton/TopScrollButton";
 const TagFilter = ({match}) => {
     const tagName = match.params.tag
     const [archives,setArchives] = useState([])
-    const [count,setCount] = useState([])
+    const [count,setCount] = useState(0)
 
     useEffect(() => {
         axios.post('http://localhost:3001/tags', {name:tagName})
@@ -30,7 +30,7 @@ const TagFilter = ({match}) => {
             <Background/>
             <div className={classes.content}>
                 <div className={classes.blogList}>
-                    <h1>{`共计${count || 0}篇文章`}</h1>
+                    <h1>{`共计${count !==0 ? count : 0}篇文章`}</h1>
                     {archives.map((item) =>
                         <div className={classes.contentDetail}>
                             <h2>{item.year}</h2>

@@ -10,7 +10,7 @@ import TopScrollButton from "../../common/TopScrollButton/TopScrollButton";
 const Archive = () => {
 
     const [archives,setArchives] = useState([])
-    const [count,setCount] = useState([])
+    const [count,setCount] = useState(0)
 
     useEffect(() => {
         axios.get('http://localhost:3001/archive')
@@ -29,7 +29,7 @@ const Archive = () => {
             <Background/>
             <div className={classes.content}>
                 <div className={classes.blogList}>
-                    <h1>{`共计${count || 0}篇文章`}</h1>
+                    <h1>{`共计${count !==0 ? count : 0}篇文章`}</h1>
                     {archives.map((item) =>
                         <div className={classes.contentDetail}>
                             <h2>{item.year}</h2>
