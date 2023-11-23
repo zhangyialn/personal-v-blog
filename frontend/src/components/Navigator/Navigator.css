@@ -208,6 +208,20 @@ a {
         line-height: 14vw;
     }
 
+    .search-box {
+        width: 100%;
+    }
+
+    .search-box h1 {
+        font-size: 5.5vw;
+        margin-left: -3vw;
+    }
+
+    .search-box .input {
+        height: 8vw;
+        margin-top: 6vw;
+    }
+
 }
 
 

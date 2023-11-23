@@ -39,9 +39,15 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         padding-top: 5vw;
         border-radius: 10px;
         padding-bottom: 7vw;
         box-shadow: 10px 5px 12px rgba(0,0,0,.1),-10px 0 12px rgba(0,0,0,.2);
+    }
+
+    .tagList p {
+        font-size: 4vw;
+        padding-right: 1.5vw;
     }
 }

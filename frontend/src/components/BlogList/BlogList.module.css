@@ -31,6 +31,10 @@ a {
     color: #3c4858;
 }
 
+.footer {
+
+}
+
 .date {
     color: #3c4858;
     margin-left: 0.6vw;
@@ -57,4 +61,16 @@ a {
     color: #54bbf2;
 }
 
+@media screen and (max-width:426px){
+    h2 {
+        font-size: 5vw;
+    }
 
+    .contentList {
+        font-size: 4vw;
+    }
+
+    .footer,.footer i {
+        font-size: 3.5vw;
+    }
+}

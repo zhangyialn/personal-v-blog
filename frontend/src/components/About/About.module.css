@@ -46,3 +46,19 @@
 .profile a:hover i {
     color: #00a1d6;
 }
+
+@media screen and (max-width:426px) {
+    .avatar {
+        width: 30vw;
+        height: 30vw;
+        transform: translateY(-20.5vw);
+    }
+
+    .profile a {
+        transform: translateY(-21.5vw);
+    }
+
+    .profile a i {
+        font-size: 6vw;
+    }
+}

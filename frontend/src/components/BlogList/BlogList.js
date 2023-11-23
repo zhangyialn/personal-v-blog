@@ -18,7 +18,7 @@ const BlogList = ({content}) => {
                             <div key={item.id}>{item.content}</div>
                         </div>
                     </Link>
-                    <div>
+                    <div className={classes.footer}>
                         <i className="iconfont icon-calendar2" ></i>
                         <span className={classes.date}>{item.date}</span>
                         <i className="iconfont icon-label_fill"></i>
